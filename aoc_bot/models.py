@@ -14,6 +14,7 @@ class Settings(pydantic.BaseSettings):
     telegram_token: str = ""
     telegram_chats: List[str] = []
     interval: int = 15 * 60
+    timezone: str = "Europe/London"
 
     class Config:
         env_prefix = ENV_PREFIX

@@ -97,7 +97,7 @@ def run_once(conf: Settings, previous_board: LeaderBoard) -> LeaderBoard:
     logger.info("Diff was calculated")
 
     notify_telegram_chats(
-        conf.telegram_token, conf.telegram_chats, reports.text_leaderboard_diff(lb_diff)
+        conf.telegram_token, conf.telegram_chats, reports.text_leaderboard_diff(conf.timezone, lb_diff)
     )
 
     return leader_board

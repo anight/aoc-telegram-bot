@@ -10,7 +10,7 @@ We do not publish docker images, so you should build it by yourself
 1. Clone repository
 
     ```shell script
-    git clone git@github.com:vlad-tokarev/aoc-telegram-bot.git
+    git clone git@github.com:anight/aoc-telegram-bot.git
     cd aoc-telegram-bot
     ```
 
@@ -40,7 +40,12 @@ We do not publish docker images, so you should build it by yourself
      ```shell script
     echo 'aoc_bot__telegram_chats=["640247566", "421251151"]' >> .env
      ```
-   
+
+    Set `aoc_bot__timezone` to your local time zone for the reports
+     ```shell script
+    echo 'aoc_bot__timezone=Europe/London' >> .env
+     ```
+
    For other configuration parameters check `Settings` model in `aoc_bot/models.py`
    
 4. Prepare secrets

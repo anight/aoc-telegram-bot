@@ -85,7 +85,7 @@ def test_text_leaderboard_diff(board_file, board_file_new, report_file):
 
     with open(f"{TEST_RESOURCES}/{report_file}") as f:
         report = f.read()
-    assert report == reports.text_leaderboard_diff(lb_new - lb)
+    assert report == reports.text_leaderboard_diff(cfg.timezone, lb_new - lb)
 
 
 @pytest.mark.parametrize(
@@ -153,4 +153,4 @@ def test_notify_telegram_chats():
     diff = lb_changed - lb
     bot.notify_telegram_chats(cfg.telegram_token, cfg.telegram_chats, reports.text_leaderboard(lb))
     bot.notify_telegram_chats(cfg.telegram_token, cfg.telegram_chats, reports.text_leaderboard(lb_changed))
-    bot.notify_telegram_chats(cfg.telegram_token, cfg.telegram_chats, reports.text_leaderboard_diff(diff))
+    bot.notify_telegram_chats(cfg.telegram_token, cfg.telegram_chats, reports.text_leaderboard_diff(cfg.timezone, diff))

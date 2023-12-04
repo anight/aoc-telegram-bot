@@ -20,10 +20,10 @@ def text_leaderboard(lb: models.LeaderBoard) -> str:
     return tabulate(tbl, headers=headers)
 
 
-def text_leaderboard_diff(lb_diff: models.LeaderBoardDiff) -> str:
+def text_leaderboard_diff(timezone: str, lb_diff: models.LeaderBoardDiff) -> str:
 
     date_format = "%H:%M:%S"
-    local = pytz.timezone("Europe/Moscow")
+    local = pytz.timezone(timezone)
 
     report = "Changes in leaderboard!\n"
 
